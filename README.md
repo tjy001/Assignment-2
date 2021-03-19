@@ -5,7 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## How to start
 Navigate to the project directory and run `npm start`
 
-`cd assignment2`
+`cd Assignment-2`
 `npm start`
 
 ### Features
