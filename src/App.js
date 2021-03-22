@@ -6,43 +6,22 @@ import Nav from './components/Nav';
 import Cart from './components/Cart';
 import Products from './components/Products';
 import ProductPage from './components/ProductPage';
-import img1 from './img/1.jpg';
-import img2 from './img/2.jpg';
 import { useCookies } from 'react-cookie';
 
 const App = () => {
   const [cookies, setCookie] = useCookies(['mycookie']);
-  const [products, setProducts] = useState([
-    {
-      "id":1,
-      "title":"Alpacas - Pack of 3",
-      "price":109.95,
-      "description":"A pack of 3 alpacas, fluffy and adorable, perfect for your everyday needs.", 
-      "category":"men clothing",
-      "image": img1
-    }, {
-      "id":2,
-      "title":"Corgi",
-      "price":99.95,
-      "description":"Small, fluffy, and extremely adorable. The perfect companion to melt your fatigue away after a long day of work.", 
-      "category":"men clothing",
-      "image": img2
-    }
-  ]);
+  const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({products: []});
   const [cartitems, setCartItems] = useState(0);
   const [subtot, setSubtot] = useState(0);
 
   const getProducts = async () => {
-    const res  = await fetch('https://fakestoreapi.com/products');
-    const { data } = await res.json();
-    setProducts(data);
-  }
-
-  const getCart = async () => {
-    const res = await fetch('https://fakestoreapi.com/carts/1');
-    const { data } = await res.json();
-    setCart(data);
+    const res  = await fetch('https://fakestoreapi.herokuapp.com/products', {
+      method: 'GET',
+      headers: { 
+        'Content-Type': 'text/plain'
+      }
+    }).then(res=>res.json()).then(json=>setProducts(json));
   }
 
   const getSubtot = () => {
@@ -98,8 +77,7 @@ const App = () => {
     if (cookies.mycookie) {
       setCart(cookies.mycookie);
     }
-    //getProducts();
-    //getCart();
+    getProducts();
   }, []);
 
   useEffect(() => {
