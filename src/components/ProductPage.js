@@ -20,7 +20,7 @@ const ProductPage = ({products, AddToCart}) => {
                     <div className="md:flex items-center -mx-10">
                         <div className="w-full md:w-1/2 px-10 mb-10 md:mb-0">
                             <div className="relative">
-                                <img src={product.image} className="w-full relative z-10" alt=""/>
+                                <img src={String(product.image).replace('https://fakestoreapi.com/', 'https://fakestoreapi.herokuapp.com/')} className="w-full relative z-10" alt=""/>
                                 <div className="border-4 border-yellow-200 absolute top-10 bottom-10 left-10 right-10 z-0"></div>
                             </div>
                         </div>
