@@ -5,8 +5,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## How to start
 Navigate to the project directory and run `npm start`
 
-`cd Assignment-2`
-`npm start`
+`cd <path to Assignment-2>` then `npm start`
+
+The app will be running on `localhost:3000`
 
 ### Features
 - [x] A ​main page​ that shows multiple products
@@ -16,7 +17,7 @@ Navigate to the project directory and run `npm start`
 - [x] A ​cart page​ listing the products that were added to the cart, with buttons to modify the number of products in the cart
 - [x] Cart page section showing the subtotal for all the items in the cart
 - [x] ReactJs was used for this assignment
-- [x] https://fakestoreapi.com is/was down so custom objects were used to simulate the data fetched by the API, certain functions modified/commented out since the API is/was down
+- [x] https://fakestoreapi.com is/was still down so data is instead fetched from the temporary API at https://fakestoreapi.herokuapp.com/
 
 ### Bonus Features
 - [ ] Write meaningful test cases only on cart page using jest and react-testing-library.
